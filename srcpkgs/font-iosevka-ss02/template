@@ -1,0 +1,23 @@
+# Template file for 'font-iosevka-ss02'
+pkgname=font-iosevka-ss02
+version=3.4.3
+revision=1
+archs=noarch
+create_wrksrc=yes
+depends="font-util"
+short_desc="Slender monospace sans-serif and slab-serif typeface (Anonymous Pro Style)"
+maintainer="Sahan Reddy <sahan.reddy.58@gmail.com>"
+license="OFL-1.1"
+homepage="https://be5invis.github.io/Iosevka/"
+distfiles="https://raw.githubusercontent.com/be5invis/Iosevka/v${version}/LICENSE.md>LICENSE.txt
+ https://github.com/be5invis/Iosevka/releases/download/v${version}/ttc-iosevka-ss02-${version}.zip"
+checksum="e61c0988bb231a321f14cce1b119a468f279ea86826c32e943ab16dbf08c1ba9
+ 9bd57a4fd36cb8bbe7fb9b4024896839fb4ac523d2d51621987449b15b10795e"
+
+font_dirs="/usr/share/fonts/TTF"
+
+do_install() {
+	vmkdir usr/share/fonts/TTF
+	vcopy *.ttc usr/share/fonts/TTF
+	vlicense LICENSE.txt LICENSE.md
+}
